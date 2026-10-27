@@ -2,7 +2,7 @@
 
 输入一个本地项目目录，得到项目地图、源码符号、静态调用关系、带证据的问题候选，以及可下载的审查报告。
 
-**下午展示最快方式：双击 start.cmd → 打开 http://127.0.0.1:8501 → 点击“一键演示 · 扫描示例项目”。**
+**最快方式：双击 start.cmd → 打开 http://127.0.0.1:8501 → 点击“一键演示 · 扫描示例项目”。**
 
 内置订单服务样例无需模型、网络或 API Key；扫描和报告是真实生成的，并非预置界面数据。该样例只用于静态分析，不要运行其中的业务代码。
 
@@ -125,7 +125,7 @@ repolens/
   tests/                  单元与浏览器验收
   .env.example            可选模型配置
   start.cmd               Windows 启动入口
-  DEMO_SCRIPT.md          五分钟汇报脚本
+  DEMO_SCRIPT.md          汇报脚本
 ~~~
 
 参考：[Python AST](https://docs.python.org/3/library/ast.html)、[Streamlit](https://docs.streamlit.io/)、[百炼兼容接口](https://help.aliyun.com/zh/model-studio/compatibility-of-openai-with-dashscope)。
