@@ -1,0 +1,39 @@
+{
+  "name": "ollama",
+  "endpoint": "/api/chat",
+  "request": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请用中文简要说明什么是开源大语言模型，限三句话。/no_think"
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "options": {
+      "temperature": 0,
+      "num_predict": 512
+    }
+  },
+  "response": {
+    "model": "qwen3:8b",
+    "created_at": "2026-10-27T06:06:20.3767278Z",
+    "message": {
+      "role": "assistant",
+      "content": "开源大语言模型是指基于大量文本数据训练而成的人工智能模型，其源代码和部分训练数据对公众开放。这类模型能够理解和生成自然语言，广泛应用于聊天、翻译、写作等场景。用户可以自由使用、修改和分发这些模型，促进了人工智能技术的共享与创新。"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2635616600,
+    "load_duration": 2011921800,
+    "prompt_eval_count": 36,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 84513000,
+    "eval_count": 66,
+    "eval_duration": 537126000
+  },
+  "ok": true,
+  "answer": "开源大语言模型是指基于大量文本数据训练而成的人工智能模型，其源代码和部分训练数据对公众开放。这类模型能够理解和生成自然语言，广泛应用于聊天、翻译、写作等场景。用户可以自由使用、修改和分发这些模型，促进了人工智能技术的共享与创新。",
+  "seconds": 2.661
+}

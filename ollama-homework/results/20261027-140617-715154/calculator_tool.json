@@ -1,0 +1,182 @@
+{
+  "name": "calculator_tool",
+  "ok": true,
+  "trace": [
+    {
+      "request": {
+        "model": "qwen3:8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "计算乘法时必须调用 multiply 工具，根据工具返回值用中文回答。"
+          },
+          {
+            "role": "user",
+            "content": "请调用工具计算 12345 × 6789，告诉我结果。/no_think"
+          }
+        ],
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "计算两个数的乘积。",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "number",
+                    "description": "第一个乘数"
+                  },
+                  "b": {
+                    "type": "number",
+                    "description": "第二个乘数"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0,
+          "num_predict": 512
+        }
+      },
+      "response": {
+        "model": "qwen3:8b",
+        "created_at": "2026-10-27T06:06:31.458387Z",
+        "message": {
+          "role": "assistant",
+          "content": "",
+          "tool_calls": [
+            {
+              "id": "call_8a1vtwa0",
+              "function": {
+                "index": 0,
+                "name": "multiply",
+                "arguments": {
+                  "a": 12345,
+                  "b": 6789
+                }
+              }
+            }
+          ]
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 290953600,
+        "load_duration": 2210800,
+        "prompt_eval_count": 202,
+        "prompt_eval_cached_count": 1,
+        "prompt_eval_duration": 41202000,
+        "eval_count": 32,
+        "eval_duration": 244956000
+      },
+      "executed_tools": [
+        {
+          "arguments": {
+            "a": 12345,
+            "b": 6789
+          },
+          "result": {
+            "result": "83810205"
+          }
+        }
+      ]
+    },
+    {
+      "request": {
+        "model": "qwen3:8b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "计算乘法时必须调用 multiply 工具，根据工具返回值用中文回答。"
+          },
+          {
+            "role": "user",
+            "content": "请调用工具计算 12345 × 6789，告诉我结果。/no_think"
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "tool_calls": [
+              {
+                "id": "call_8a1vtwa0",
+                "function": {
+                  "index": 0,
+                  "name": "multiply",
+                  "arguments": {
+                    "a": 12345,
+                    "b": 6789
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_name": "multiply",
+            "content": "{\"result\": \"83810205\"}"
+          }
+        ],
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "计算两个数的乘积。",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "number",
+                    "description": "第一个乘数"
+                  },
+                  "b": {
+                    "type": "number",
+                    "description": "第二个乘数"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "options": {
+          "temperature": 0,
+          "num_predict": 512
+        }
+      },
+      "response": {
+        "model": "qwen3:8b",
+        "created_at": "2026-10-27T06:06:31.6957612Z",
+        "message": {
+          "role": "assistant",
+          "content": "12345 × 6789 的结果是 83810205。"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 218890100,
+        "load_duration": 2181700,
+        "prompt_eval_count": 256,
+        "prompt_eval_cached_count": 198,
+        "prompt_eval_duration": 18959000,
+        "eval_count": 25,
+        "eval_duration": 195438000
+      }
+    }
+  ],
+  "tool_calls": 1,
+  "answer": "12345 × 6789 的结果是 83810205。"
+}

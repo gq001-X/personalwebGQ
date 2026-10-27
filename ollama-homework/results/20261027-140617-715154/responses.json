@@ -1,0 +1,87 @@
+{
+  "name": "responses",
+  "endpoint": "/v1/responses",
+  "request": {
+    "model": "qwen3:8b",
+    "input": "请用中文简要说明什么是开源大语言模型，限三句话。/no_think",
+    "stream": false,
+    "temperature": 0,
+    "max_output_tokens": 512
+  },
+  "response": {
+    "id": "resp_129388",
+    "object": "response",
+    "created_at": 1793081189,
+    "completed_at": 1793081189,
+    "status": "completed",
+    "incomplete_details": null,
+    "model": "qwen3:8b",
+    "previous_response_id": null,
+    "instructions": null,
+    "output": [
+      {
+        "id": "rs_resp_129388",
+        "type": "reasoning",
+        "summary": [
+          {
+            "type": "summary_text",
+            "text": "好的，用户让我用中文简要说明什么是开源大语言模型，限三句话。首先，我需要明确开源大语言模型的定义。开源意味着代码和模型是公开的，任何人都可以使用、修改和分发。然后，大语言模型指的是那些基于大量文本数据训练，能够理解和生成自然语言的模型。接下来，我需要将这两点结合起来，说明开源大语言模型的特点，比如透明性、可定制性以及社区协作的优势。还要注意用户要求三句话，所以每句话要简洁，不能冗长。可能需要检查是否有重复或冗余的信息，确保每句话都传达一个核心点。另外，用户可能对技术细节不太熟悉，所以用词要通俗易懂，避免专业术语过多。最后，确认是否符合字数限制，确保三句话内完成。现在组织语言，确保每句都准确且简明。\n"
+          }
+        ],
+        "encrypted_content": "好的，用户让我用中文简要说明什么是开源大语言模型，限三句话。首先，我需要明确开源大语言模型的定义。开源意味着代码和模型是公开的，任何人都可以使用、修改和分发。然后，大语言模型指的是那些基于大量文本数据训练，能够理解和生成自然语言的模型。接下来，我需要将这两点结合起来，说明开源大语言模型的特点，比如透明性、可定制性以及社区协作的优势。还要注意用户要求三句话，所以每句话要简洁，不能冗长。可能需要检查是否有重复或冗余的信息，确保每句话都传达一个核心点。另外，用户可能对技术细节不太熟悉，所以用词要通俗易懂，避免专业术语过多。最后，确认是否符合字数限制，确保三句话内完成。现在组织语言，确保每句都准确且简明。\n"
+      },
+      {
+        "id": "msg_219252",
+        "type": "message",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "开源大语言模型是指基于开源协议发布的大型语言模型，其代码和参数均向公众开放。这类模型通过海量文本数据训练，具备理解与生成自然语言的能力。开发者可自由使用、修改和分发模型，推动技术透明化与社区协作创新。",
+            "annotations": [],
+            "logprobs": []
+          }
+        ]
+      }
+    ],
+    "error": null,
+    "tools": [],
+    "tool_choice": "auto",
+    "truncation": "disabled",
+    "parallel_tool_calls": true,
+    "text": {
+      "format": {
+        "type": "text"
+      }
+    },
+    "top_p": 1,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "top_logprobs": 0,
+    "temperature": 0,
+    "reasoning": null,
+    "usage": {
+      "input_tokens": 30,
+      "output_tokens": 248,
+      "total_tokens": 278,
+      "input_tokens_details": {
+        "cached_tokens": 29
+      },
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "max_output_tokens": 512,
+    "max_tool_calls": null,
+    "store": false,
+    "background": false,
+    "service_tier": "default",
+    "metadata": {},
+    "safety_identifier": null,
+    "prompt_cache_key": null
+  },
+  "ok": true,
+  "answer": "开源大语言模型是指基于开源协议发布的大型语言模型，其代码和参数均向公众开放。这类模型通过海量文本数据训练，具备理解与生成自然语言的能力。开发者可自由使用、修改和分发模型，推动技术透明化与社区协作创新。",
+  "seconds": 2.0
+}
