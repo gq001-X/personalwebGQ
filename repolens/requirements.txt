@@ -1,0 +1,2 @@
+# Core analysis and CLI use only Python standard library.
+streamlit==1.64.0
