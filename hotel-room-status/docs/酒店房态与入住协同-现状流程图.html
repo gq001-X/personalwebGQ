@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>酒店房态与入住协同 · 现状流程图</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #e7eeeb; color: #173735; font-family: "Microsoft YaHei", sans-serif; }
+main { max-width: 1180px; margin: auto; padding: 14px 16px 36px; }
+nav { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 12px; }
+button { background: #fff; color: #174c44; border: 1px solid #abc1ba; border-radius: 6px; padding: 8px 15px; font: inherit; font-size: 15px; cursor: pointer; }
+button:hover, button:focus-visible { background: #d9eae2; }
+.sheet { overflow-x: auto; background: #faf9f5; border: 1px solid #c8d6d0; }
+svg { display: block; width: 100%; height: auto; }
+.enlarged svg { width: 150%; min-width: 1320px; }
+@media (max-width: 600px) { main { padding: 10px 4px; } nav { margin-right: 6px; } }
+@page { size: A4 portrait; margin: 8mm; }
+@media print {
+  body, main { margin: 0; padding: 0; background: white; }
+  nav { display: none; }
+  .sheet { overflow: visible; border: 0; break-inside: avoid; }
+  .sheet svg { width: 100%; min-width: 0; height: auto; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<main aria-label="山海旅居现状流程图">
+<nav aria-label="流程图工具">
+  <button type="button" id="zoom" aria-controls="diagram" aria-pressed="false">放大查看</button>
+  <button type="button" id="print">打印流程图</button>
+</nav>
+<div class="sheet" id="diagram" tabindex="0" role="region" aria-label="酒店房态与入住协同流程图">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1340" viewBox="0 0 1320 1340" role="img" aria-labelledby="title desc">
+<title id="title">酒店房态与入住协同 · 现状流程图</title>
+<desc id="desc">山海旅居合成案例。左侧是从预订到入住回访的人工流程；右侧分别列出实际误判和人工异常分支，复核后返回前台判断。底部列出核实等待时间的三个节点。</desc>
+<defs>
+<marker id="cool" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="10.5" refY="6.5" orient="auto" viewBox="0 0 13 13"><path d="M1 1 L11 6.5 L1 12 Z" fill="#28746B"/></marker>
+<marker id="warm" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="10.5" refY="6.5" orient="auto" viewBox="0 0 13 13"><path d="M1 1 L11 6.5 L1 12 Z" fill="#AE5430"/></marker>
+</defs><g font-family="'Microsoft YaHei','Noto Sans SC','DengXian',sans-serif">
+<rect x="0" y="0" width="1320" height="1340" rx="0" fill="#FAF9F5" stroke="none" stroke-width="1.5"/>
+<rect x="0" y="0" width="1320" height="10" rx="0" fill="#146058" stroke="none" stroke-width="1.5"/>
+<text x="56" y="53" font-size="20" font-weight="700" fill="#146058" text-anchor="start">山海旅居  /  现场调研</text>
+<text x="1264" y="52" font-size="17" font-weight="400" fill="#435F5E" text-anchor="end">合成训练案例 · 根据三份项目材料整理</text>
+<text x="54" y="117" font-size="47" font-weight="700" fill="#173735" text-anchor="start">酒店房态与入住协同 · 现状流程图</text>
+<text x="56" y="155" font-size="22" font-weight="400" fill="#435F5E" text-anchor="start">追踪一笔入住订单，查看清扫、查房与前台交付之间的交接。</text>
+<rect x="56" y="181" width="1208" height="66" rx="9" fill="#E8F2EF" stroke="none" stroke-width="1.5"/>
+<text x="78" y="208" font-size="17" font-weight="700" fill="#146058" text-anchor="start">核对资料</text>
+<text x="172" y="208" font-size="18" font-weight="400" fill="#173735" text-anchor="start">订单与房态、清扫查房单、维修及换房记录</text>
+<text x="78" y="233" font-size="17" font-weight="700" fill="#146058" text-anchor="start">交接凭据</text>
+<text x="172" y="233" font-size="18" font-weight="400" fill="#173735" text-anchor="start">业务编号、版本、状态、未解决事项和接手人；接手人确认后，本岗交接完成。</text>
+<text x="56" y="288" font-size="25" font-weight="700" fill="#173735" text-anchor="start">从预订到服务回访</text>
+<text x="766" y="288" font-size="25" font-weight="700" fill="#173735" text-anchor="start">访谈记录中的现场偏差</text>
+<path d="M329 390 V415" fill="none" stroke="#28746B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<path d="M329 502 V527" fill="none" stroke="#28746B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<path d="M329 614 V644" fill="none" stroke="#28746B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<path d="M329 795 V845" fill="none" stroke="#28746B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<path d="M329 932 V963" fill="none" stroke="#28746B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<rect x="56" y="304" width="546" height="86" rx="12" fill="#FFFFFF" stroke="#B4CCC7" stroke-width="1.5"/>
+<text x="78" y="328" font-size="16" font-weight="600" fill="#146058" text-anchor="start">前台 · 林亦舟</text>
+<text x="78" y="360" font-size="25" font-weight="700" fill="#173735" text-anchor="start">收到预订或客人到店</text>
+<text x="578" y="360" font-size="17" font-weight="400" fill="#435F5E" text-anchor="end">按订单号核对房态</text>
+<rect x="56" y="416" width="546" height="86" rx="12" fill="#FFFFFF" stroke="#B4CCC7" stroke-width="1.5"/>
+<text x="78" y="440" font-size="16" font-weight="600" fill="#146058" text-anchor="start">客房部 · 清扫人员</text>
+<text x="78" y="472" font-size="25" font-weight="700" fill="#173735" text-anchor="start">清扫结束，登记“已清扫”</text>
+<rect x="540" y="426" width="42" height="25" rx="6" fill="#E3F0EC" stroke="none" stroke-width="1.5"/>
+<text x="561" y="444" font-size="15" font-weight="700" fill="#146058" text-anchor="middle">T1</text>
+<rect x="56" y="528" width="546" height="86" rx="12" fill="#FFFFFF" stroke="#B4CCC7" stroke-width="1.5"/>
+<text x="78" y="552" font-size="16" font-weight="600" fill="#146058" text-anchor="start">客房部 · 查房人员</text>
+<text x="78" y="584" font-size="25" font-weight="700" fill="#173735" text-anchor="start">现场查房，核对维修复查项</text>
+<rect x="540" y="538" width="42" height="25" rx="6" fill="#E3F0EC" stroke="none" stroke-width="1.5"/>
+<text x="561" y="556" font-size="15" font-weight="700" fill="#146058" text-anchor="middle">T2</text>
+<polygon points="329,645 602,720 329,795 56,720" fill="#DFF0EA" stroke="#548E81" stroke-width="2"/>
+<text x="329" y="698" font-size="16" font-weight="600" fill="#146058" text-anchor="middle">前台 · 林亦舟   /   T3 收到结果</text>
+<text x="329" y="728" font-size="24" font-weight="700" fill="#173735" text-anchor="middle">查房通过，且应做的</text>
+<text x="329" y="756" font-size="23" font-weight="700" fill="#173735" text-anchor="middle">复查均已确认？</text>
+<text x="347" y="827" font-size="18" font-weight="700" fill="#146058" text-anchor="start">是</text>
+<rect x="56" y="846" width="546" height="86" rx="12" fill="#FFFFFF" stroke="#B4CCC7" stroke-width="1.5"/>
+<text x="78" y="870" font-size="16" font-weight="600" fill="#146058" text-anchor="start">前台 · 林亦舟</text>
+<text x="78" y="902" font-size="25" font-weight="700" fill="#173735" text-anchor="start">确认可交付，办理入住</text>
+<text x="578" y="902" font-size="17" font-weight="400" fill="#435F5E" text-anchor="end">输出入住记录</text>
+<rect x="56" y="964" width="546" height="86" rx="12" fill="#FFFFFF" stroke="#B4CCC7" stroke-width="1.5"/>
+<text x="78" y="988" font-size="16" font-weight="600" fill="#146058" text-anchor="start">客人体验主管 · 叶书</text>
+<text x="78" y="1020" font-size="25" font-weight="700" fill="#173735" text-anchor="start">服务回访，登记反馈</text>
+<text x="578" y="1020" font-size="17" font-weight="400" fill="#435F5E" text-anchor="end">有争议时由唐映秋协助核对</text>
+<rect x="766" y="304" width="498" height="283" rx="12" fill="#FFF5EB" stroke="#E3C3AA" stroke-width="1.5"/>
+<text x="789" y="338" font-size="23" font-weight="700" fill="#994223" text-anchor="start">清扫标记被当成入住许可</text>
+<text x="789" y="370" font-size="19" font-weight="400" fill="#173735" text-anchor="start">同一字段混记“已清扫、已查房、可售”。</text>
+<text x="789" y="399" font-size="18" font-weight="400" fill="#173735" text-anchor="start">前台遇到查房未完成，需电话追问，客人等待。</text>
+<text x="789" y="427" font-size="18" font-weight="400" fill="#173735" text-anchor="start">部分说明留在便签或群聊，换班时还得再问。</text>
+<path d="M789 450 H1241" fill="none" stroke="#E5CEB8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="789" y="482" font-size="23" font-weight="700" fill="#994223" text-anchor="start">维修房漏复查，客人入住后换房</text>
+<text x="789" y="514" font-size="18" font-weight="400" fill="#173735" text-anchor="start">维修房解封 → 漏掉异味复查 → 前台办理入住</text>
+<text x="789" y="542" font-size="18" font-weight="400" fill="#173735" text-anchor="start">→ 客人发现异味 → 前台重新安排房间。</text>
+<text x="789" y="570" font-size="16" font-weight="400" fill="#435F5E" text-anchor="start">两则访谈事例是否同单，仍待原始记录核对。</text>
+<text x="766" y="625" font-size="25" font-weight="700" fill="#173735" text-anchor="start">人工复核与异常分派</text>
+<rect x="766" y="644" width="498" height="406" rx="12" fill="#FFFFFF" stroke="#D7B59F" stroke-width="1.5"/>
+<text x="790" y="681" font-size="23" font-weight="700" fill="#994223" text-anchor="start">唐映秋接手，分派给实际处理人</text>
+<text x="790" y="711" font-size="19" font-weight="400" fill="#173735" text-anchor="start">记录触发原因、接手人和确认时间。</text>
+<path d="M790 729 H1240" fill="none" stroke="#E7DCD4" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="790" y="758" font-size="19" font-weight="700" fill="#994223" text-anchor="start">维修房漏复查</text>
+<text x="790" y="783" font-size="17" font-weight="400" fill="#173735" text-anchor="start">暂停交付，安排现场复查并回传结果。</text>
+<text x="790" y="818" font-size="19" font-weight="700" fill="#994223" text-anchor="start">资料缺少依据</text>
+<text x="790" y="843" font-size="17" font-weight="400" fill="#173735" text-anchor="start">补取对应原单，按业务编号和版本核对。</text>
+<text x="790" y="878" font-size="19" font-weight="700" fill="#994223" text-anchor="start">两版规则冲突</text>
+<text x="790" y="903" font-size="17" font-weight="400" fill="#173735" text-anchor="start">唐映秋附上两版规则，交傅景裁定。</text>
+<text x="790" y="938" font-size="19" font-weight="700" fill="#994223" text-anchor="start">关键系统中断</text>
+<text x="790" y="963" font-size="17" font-weight="400" fill="#173735" text-anchor="start">沿用人工流程；带时间戳的只读快照标“暂未更新”。</text>
+<path d="M790 980 H1240" fill="none" stroke="#E7DCD4" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="790" y="1009" font-size="18" font-weight="600" fill="#173735" text-anchor="start">复核通过后回传前台，仍有疑问则继续待办。</text>
+<text x="790" y="1034" font-size="16" font-weight="400" fill="#435F5E" text-anchor="start">超约定时限由唐映秋报顾明岚；具体时限待核。</text>
+<path d="M602 720 H764" fill="none" stroke="#AE5430" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#warm)"/>
+<text x="681" y="706" font-size="17" font-weight="700" fill="#994223" text-anchor="middle">否／不清楚</text>
+<path d="M766 808 H663 V760 H462" fill="none" stroke="#AE5430" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#warm)"/>
+<text x="659" y="784" font-size="16" font-weight="600" fill="#994223" text-anchor="end">回传后再判</text>
+<rect x="56" y="1078" width="1208" height="174" rx="12" fill="#E8F2EF" stroke="none" stroke-width="1.5"/>
+<text x="79" y="1116" font-size="25" font-weight="700" fill="#173735" text-anchor="start">用同一单的三个时间点定位等待</text>
+<text x="79" y="1156" font-size="23" font-weight="700" fill="#146058" text-anchor="start">T1  清扫结束</text>
+<path d="M251 1148 H325" fill="none" stroke="#28746B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<text x="348" y="1156" font-size="23" font-weight="700" fill="#146058" text-anchor="start">T2  查房完成</text>
+<path d="M523 1148 H597" fill="none" stroke="#28746B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#cool)"/>
+<text x="621" y="1156" font-size="23" font-weight="700" fill="#146058" text-anchor="start">T3  前台获知查房结果</text>
+<text x="79" y="1191" font-size="20" font-weight="400" fill="#173735" text-anchor="start">T2 − T1 包含等候查房和执行查房的时间；T3 − T2 是结果传到前台的时间。</text>
+<text x="79" y="1224" font-size="18" font-weight="400" fill="#435F5E" text-anchor="start">待核实：由谁回写查房结果、前台以哪个记录为准，以及各环节实际耗时。</text>
+<path d="M56 1273 H1264" fill="none" stroke="#C9D5D1" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="56" y="1300" font-size="16" font-weight="400" fill="#435F5E" text-anchor="start">资料依据  《业务挖掘报告》《现场调研报告》《四份可核对资料》</text>
+<text x="56" y="1324" font-size="15" font-weight="400" fill="#435F5E" text-anchor="start">访谈编号（travel-hotel-）  主流程 f01、f20、f21、f23    /    异常与交接 f10、f11、f14、f24、f25、f31、f35、f44、f54</text>
+</g></svg>
+</div>
+</main>
+<script>
+const zoom = document.getElementById('zoom');
+const diagram = document.getElementById('diagram');
+zoom.addEventListener('click', () => {
+  const enlarged = diagram.classList.toggle('enlarged');
+  zoom.setAttribute('aria-pressed', String(enlarged));
+  zoom.textContent = enlarged ? '适应宽度' : '放大查看';
+  if (!enlarged) diagram.scrollLeft = 0;
+});
+document.getElementById('print').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
