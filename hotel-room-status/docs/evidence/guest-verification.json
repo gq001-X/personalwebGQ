@@ -1,0 +1,10 @@
+{
+  "url": "https://cst-poker-threaded-applications.trycloudflare.com",
+  "anonymousLanding": true,
+  "guestRulePreview": true,
+  "guestPages": 5,
+  "staffLogin": true,
+  "returnToGuest": true,
+  "mobileOverflow": false,
+  "errors": []
+}

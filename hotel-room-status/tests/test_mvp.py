@@ -149,5 +149,21 @@ class MVPTests(unittest.TestCase): # 每个用例使用全新隔离数据
             conn.execute("UPDATE knowledge SET version=version+1 WHERE id='a-check'") # 改变依据版本
         self.assertEqual(self.request("POST", "/api/handoffs/" + task["id"] + "/accept", "house_a").status_code, 409) # 禁止使用旧规则确认
 
+    def test_public_demo_is_separate_and_read_only(self): # 免登录不能扩大酒店数据范围
+        """无入参、无返回值；公开接口泄漏内部资料、写入记录或绕过原鉴权时失败。"""
+        with core.database() as conn: # 给真实酒店资料添加测试哨兵
+            conn.execute("UPDATE knowledge SET body='PRIVATE_TENANT_SENTINEL' WHERE tenant='hotel-a'") # 内部修改不能进入公开演示
+            before = [conn.execute("SELECT COUNT(*) FROM " + name).fetchone()[0] for name in ("sessions", "runs", "audits", "usage")] # 表名固定不来自用户
+        response = self.client.get("/api/demo?tenant=hotel-a") # 查询参数不能选择真实酒店
+        self.assertEqual(response.status_code, 200) # 未登录可直接浏览
+        self.assertNotIn("PRIVATE_TENANT_SENTINEL", response.text) # 数据必须独立
+        self.assertTrue(all(c["tenant"] == "public-demo" for c in response.json()["data"]["cases"])) # 仅公开合成样例
+        self.assertEqual(self.client.get("/api/admin/users").status_code, 401) # 原管理接口仍需登录
+        self.assertEqual(self.client.post("/api/checks", json={"case_id": "A-101", "expected_version": 1}).status_code, 401) # 不能匿名消耗模型
+        self.assertEqual(self.client.post("/api/handoffs", json={"run_id": "fake", "receiver": "house_a", "confirmed": True}).status_code, 401) # 写入仍需身份
+        with core.database() as conn: # 核对公开访问没有副作用
+            after = [conn.execute("SELECT COUNT(*) FROM " + name).fetchone()[0] for name in ("sessions", "runs", "audits", "usage")] # 表名固定
+        self.assertEqual(before, after) # 不创建匿名账号、任务、审计或模型用量
+
 if __name__ == "__main__": # 支持命令行验证
     unittest.main() # 任何失败都返回非零退出码

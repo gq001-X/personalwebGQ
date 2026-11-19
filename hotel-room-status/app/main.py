@@ -12,6 +12,7 @@ from starlette.exceptions import HTTPException # 捕获框架错误
 from app.core import CONFIG, ROOT, audit, case_for, database, envelope, fail, password_hash, password_matches, require_role, token_hash # 复用核心模块
 from app.harness import generate, retrieve, rule_check, run_check # 运行受控智能体流程
 from app.seed import initialize # 初始化合成演示资料
+from app.demo import public_demo # 提供独立的公开只读样本
 
 @asynccontextmanager # 在启动时初始化一次
 async def lifespan(application): # 生命周期入口
@@ -118,6 +119,11 @@ def index(): # 首页由同一个FastAPI提供
 def health(): # 不显示秘密或内部地址
     """无入参；返回服务存活状态，模型状态须通过实际调用验证。"""
     return envelope({"service": "hotel-mvp", "status": "running", "data_mode": "synthetic"}) # 不把服务存活等同于模型成功
+
+@app.get("/api/demo") # 免登录演示只读入口
+def demo(): # 与业务认证接口分开
+    """无入参；返回固定公开合成样本；不读取租户数据、不调用模型、不写入数据库。"""
+    return envelope(public_demo()) # 公开范围在后端固定，不能靠前端隐藏敏感数据
 
 @app.post("/api/login") # 用户登录
 def login(body: Login): # 显式记录失败尝试

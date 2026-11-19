@@ -2,6 +2,10 @@
 
 MVP 是“最小可用产品”：本项目把一个业务闭环做成能登录、能核对、能交接、能验收的应用。演示主题是“已清扫不等于已查房”，使用合成资料，真实调用本机 Ollama。
 
+## 免登录访问
+
+直接打开演示网址即可进入访客工作台，无需账号密码。访客可浏览固定公开房态、规则依据、图谱及流程说明；样例来自独立的`/api/demo`接口，不读取酒店业务库，不调用模型，也不创建交接。右上角“工作人员登录”进入原有角色权限流程，AI问答、Wiki生成、交接及管理仍需认证。
+
 ## 本次已实现
 
 | 课程要求 | 实现与验收入口 |
@@ -34,7 +38,7 @@ ollama pull qwen3:8b # 首次下载模型，已有模型可跳过
 ## 自测
 
 ```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v # 独立临时数据库，11组回归测试
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v # 独立临时数据库，12组回归测试
 .\.venv\Scripts\python.exe scripts/verify.py # 验证运行中服务的认证与租户隔离
 .\.venv\Scripts\python.exe scripts/verify.py --model # 实际Ollama核对、问答、交接和Wiki草稿
 ```
