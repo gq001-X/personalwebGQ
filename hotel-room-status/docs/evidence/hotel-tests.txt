@@ -1,0 +1,29 @@
+D:\Codex\2026-11-19\lao\work\personalwebGQ\hotel-room-status\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_auth_errors_and_body_limits (test_mvp.MVPTests.test_auth_errors_and_body_limits)
+无入参、无返回值；认证、结构或请求尺寸边界不符时失败。 ... ok
+test_changed_knowledge_blocks_acceptance (test_mvp.MVPTests.test_changed_knowledge_blocks_acceptance)
+无入参、无返回值；知识版本变化后仍可接手旧任务时失败。 ... ok
+test_changed_version_rejected (test_mvp.MVPTests.test_changed_version_rejected)
+无入参、无返回值；房态变化后仍可执行旧草稿时失败。 ... ok
+test_handoff_confirmation_receiver_and_idempotency (test_mvp.MVPTests.test_handoff_confirmation_receiver_and_idempotency)
+无入参、无返回值；缺确认、越权接手或重复创建时失败。 ... ok
+test_logout_and_expiry (test_mvp.MVPTests.test_logout_and_expiry)
+无入参、无返回值；注销或过期令牌仍有效时失败。 ... ok
+test_model_claim_and_citation_rejection (test_mvp.MVPTests.test_model_claim_and_citation_rejection)
+无入参、无返回值；伪造引用或放行承诺被接受时失败。 ... ok
+test_quota_and_no_evidence (test_mvp.MVPTests.test_quota_and_no_evidence)
+无入参、无返回值；超过配额仍调用模型或无依据编造时失败。 ... ok
+test_role_and_disabled_session (test_mvp.MVPTests.test_role_and_disabled_session)
+无入参、无返回值；前台越权或停用后仍可访问时失败。 ... ok
+test_rules_and_offline_harness (test_mvp.MVPTests.test_rules_and_offline_harness)
+无入参、无返回值；未查房被放行或降级伪装模型时失败。 ... ok
+test_tenant_isolation (test_mvp.MVPTests.test_tenant_isolation)
+无入参、无返回值；跨租户数据泄漏或管理员越界时失败。 ... ok
+test_wiki_requires_model_and_admin (test_mvp.MVPTests.test_wiki_requires_model_and_admin)
+无入参、无返回值；非管理员编译或模型离线仍生成Wiki时失败。 ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 17.946s
+
+OK

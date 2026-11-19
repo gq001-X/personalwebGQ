@@ -1,0 +1,171 @@
+{
+  "check": {
+    "status": 200,
+    "response": {
+      "ok": true,
+      "data": {
+        "id": "432004bc226467a8051342f3",
+        "case_id": "A-101",
+        "case_version": 1,
+        "status": "NEEDS_REVIEW",
+        "reasons": [
+          "查房未通过或记录缺失，请客房人员核实"
+        ],
+        "needs_human": true,
+        "notice": "仅为记录核对，交付决定由授权人员完成",
+        "answer": {
+          "explanation": "当前房态快照显示房间101已清扫但查房未完成，需核实查房状态。根据证据a-check，清扫完成不等于查房完成，应显示待查房并转客房人员核实。此外，快照时间戳为1795068854.9590347，需确认是否为最新数据。",
+          "citations": [
+            "a-check",
+            "a-freshness"
+          ],
+          "mode": "ollama",
+          "reason": "",
+          "model": "qwen3:8b"
+        },
+        "evidence": [
+          {
+            "id": "a-check",
+            "tenant": "hotel-a",
+            "title": "清扫完成不等于查房完成",
+            "body": "房间已清扫而查房未通过时，应显示待查房并转客房人员核实。渠道可售不能代替查房确认。系统只能解释状态，不能自动放行。",
+            "source": "discovery-report.md · f10 / f31 / f50",
+            "version": 1,
+            "updated": 1795068854.9590347
+          },
+          {
+            "id": "a-freshness",
+            "tenant": "hotel-a",
+            "title": "快照时间与异常兜底",
+            "body": "资料超期、依据缺失、规则冲突或关键系统不可用时，明确提示转人工。旧快照必须显示时间戳，不作为实时入住承诺。",
+            "source": "discovery-report.md · f34 / f35 / f44",
+            "version": 1,
+            "updated": 1795068854.9590347
+          },
+          {
+            "id": "a-handoff",
+            "tenant": "hotel-a",
+            "title": "交接以接手确认结束",
+            "body": "交接包括业务编号、版本、状态、未解决事项和接手人。仅发送消息或分派任务不算完成，接手人确认后才结束交接。",
+            "source": "discovery-report.md · f23 / f25",
+            "version": 1,
+            "updated": 1795068854.9590347
+          },
+          {
+            "id": "a-repair",
+            "tenant": "hotel-a",
+            "title": "维修房必须完成必要复查",
+            "body": "维修后存在复查任务但尚未通过时，应列出未完成事项并转人工。记录缺失属于未知，不能当作无需复查。",
+            "source": "discovery-report.md · f11 / f44",
+            "version": 1,
+            "updated": 1795068854.9590347
+          }
+        ],
+        "as_of": 1795068854.9590347,
+        "elapsed_ms": 938,
+        "trace": [
+          "认证与租户授权",
+          "快照与版本校验",
+          "知识检索与图谱关系",
+          "确定性规则拦截",
+          "本地模型解释",
+          "输出引用与承诺检查",
+          "人工审核关口"
+        ],
+        "prompt_version": "hotel-v1"
+      },
+      "error": {
+        "code": "",
+        "msg": ""
+      }
+    }
+  },
+  "handoff": {
+    "ok": true,
+    "data": {
+      "id": "42371c377eb413e148507e12",
+      "tenant": "hotel-a",
+      "run_id": "432004bc226467a8051342f3",
+      "case_id": "A-101",
+      "case_version": 1,
+      "receiver": "house_a",
+      "created_by": "admin_a",
+      "status": "ACCEPTED",
+      "note": "真实模型与人工接手演示验证",
+      "created": 1795069400.5649002,
+      "accepted": 1795069400.5700934
+    },
+    "error": {
+      "code": "",
+      "msg": ""
+    }
+  },
+  "rag": {
+    "status": 200,
+    "response": {
+      "ok": true,
+      "data": {
+        "answer": {
+          "explanation": "当前记录显示房间已清扫但未查房，系统状态应标记为待查房，并转客房人员核实。交接流程需由接手人确认后才结束，仅分派任务不视为完成交接。",
+          "citations": [
+            "a-check",
+            "a-handoff"
+          ],
+          "mode": "ollama",
+          "reason": "",
+          "model": "qwen3:8b"
+        },
+        "evidence": [
+          {
+            "id": "a-check",
+            "tenant": "hotel-a",
+            "title": "清扫完成不等于查房完成",
+            "body": "房间已清扫而查房未通过时，应显示待查房并转客房人员核实。渠道可售不能代替查房确认。系统只能解释状态，不能自动放行。",
+            "source": "discovery-report.md · f10 / f31 / f50",
+            "version": 1,
+            "updated": 1795068854.9590347
+          },
+          {
+            "id": "a-handoff",
+            "tenant": "hotel-a",
+            "title": "交接以接手确认结束",
+            "body": "交接包括业务编号、版本、状态、未解决事项和接手人。仅发送消息或分派任务不算完成，接手人确认后才结束交接。",
+            "source": "discovery-report.md · f23 / f25",
+            "version": 1,
+            "updated": 1795068854.9590347
+          }
+        ]
+      },
+      "error": {
+        "code": "",
+        "msg": ""
+      }
+    }
+  },
+  "wiki": {
+    "status": 200,
+    "response": {
+      "ok": true,
+      "data": {
+        "id": "a58de55b1926d3c45e1c4924",
+        "status": "DRAFT",
+        "body": "当前证据表明，清扫完成不等于查房完成，需人工核实查房状态。系统仅能显示状态，不能自动放行。整理规则时需说明此逻辑，适用场景为房间清扫后查房未通过的情况，人工确认要求为转客房人员核实。"
+      },
+      "error": {
+        "code": "",
+        "msg": ""
+      }
+    }
+  },
+  "wiki_publish": {
+    "ok": true,
+    "data": {
+      "id": "a58de55b1926d3c45e1c4924",
+      "status": "PUBLISHED"
+    },
+    "error": {
+      "code": "",
+      "msg": ""
+    }
+  }
+}

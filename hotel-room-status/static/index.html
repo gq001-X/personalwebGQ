@@ -1,0 +1,23 @@
+<!doctype html> <!-- 使用标准HTML文档 -->
+<html lang="zh-CN"> <!-- 明确界面语言 -->
+<head> <!-- 页面元信息 -->
+<meta charset="UTF-8"> <!-- 使用UTF8显示中文 -->
+<meta name="viewport" content="width=device-width,initial-scale=1"> <!-- 适配手机与桌面 -->
+<title>山海旅居 · 房态协同</title> <!-- 浏览器标题 -->
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml"> <!-- 避免浏览器请求缺失图标 -->
+<link rel="stylesheet" href="/static/style.css"> <!-- 同源样式文件 -->
+<script src="/static/app.js" defer></script> <!-- 不使用内联脚本 -->
+</head> <!-- 元信息结束 -->
+<body> <!-- 主界面容器 -->
+<div id="toast" role="status" aria-live="polite"></div> <!-- 操作反馈 -->
+<main id="login-view" class="login-layout"> <!-- 登录前展示 -->
+<section class="login-story"><div class="brand"><span class="mark">山</span> 山海旅居 <span class="tiny">ROOM OPERATIONS</span></div><div class="intro"><span class="eyebrow">房态与入住协同工作台</span><h1>每一间房，<br>交接都有依据。</h1><p>把清扫、查房和待办放在一起。<br>看清当前状态，让下一位同事顺利接手。</p><div class="story-flow"><span>清扫记录</span><span>查房核对</span><span>人工交接</span></div></div><p class="login-foot">课堂 MVP · 合成数据演示 · 房间交付由授权人员确认</p></section> <!-- 品牌说明不使用虚假统计 -->
+<section class="login-box"><span class="eyebrow">欢迎回来</span><h2>登录工作台</h2><p class="muted">使用分配给你的酒店账号继续。</p><form id="login-form"><label>账号<input id="username" name="username" autocomplete="username" required placeholder="请输入演示账号"></label><label>密码<input id="password" name="password" type="password" autocomplete="current-password" required placeholder="请输入密码"></label><button class="primary" type="submit">登录</button><p id="login-error" class="error" role="alert"></p></form><p class="hint">管理员、前台和客房人员拥有不同权限。<br>账号由项目所有者提供，页面不公开演示密码。</p></section> <!-- 真正服务端登录 -->
+</main> <!-- 登录页结束 -->
+<div id="workspace" class="workspace" hidden> <!-- 认证后展示应用 -->
+<aside class="sidebar"><div class="brand"><span class="mark">山</span> 山海旅居</div><div class="workspace-label">协同工作台</div><nav id="navigation" aria-label="主导航"></nav><div class="sidebar-bottom"><span class="demo-pill">合成数据演示</span><p>核对有依据<br>接手有记录</p></div></aside> <!-- 导航由真实角色生成 -->
+<div class="main-column"><header><div><span id="hotel-name"></span><span id="plan-badge" class="badge"></span></div><div class="account"><span id="identity"></span><button id="logout" class="quiet">退出</button></div></header><main class="content"><div class="page-heading"><div><span class="eyebrow" id="page-kicker">工作台</span><h1 id="page-title">房态总览</h1><p class="muted" id="page-description"></p></div><button id="refresh" class="secondary">刷新数据</button></div><div id="page-content"></div></main><footer>状态来自演示快照；智能说明不代替查房及人工交付决定。</footer></div> <!-- 内容不混用各租户数据 -->
+</div> <!-- 应用壳结束 -->
+<dialog id="detail-dialog"><div class="dialog-head"><h2 id="dialog-title">核对结果</h2><button id="close-dialog" class="quiet" aria-label="关闭详情">关闭</button></div><div id="dialog-body"></div></dialog> <!-- 可键盘关闭的原生对话框 -->
+</body> <!-- 页面正文结束 -->
+</html> <!-- 文档结束 -->

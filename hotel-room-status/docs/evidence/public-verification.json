@@ -1,0 +1,13 @@
+{
+  "target": "https://cst-poker-threaded-applications.trycloudflare.com",
+  "checks": [
+    "认证",
+    "角色权限",
+    "两租户隔离",
+    "跨租户ID拒绝",
+    "真实Ollama核对",
+    "人工交接闭环",
+    "真实RAG问答",
+    "真实Wiki草稿"
+  ]
+}

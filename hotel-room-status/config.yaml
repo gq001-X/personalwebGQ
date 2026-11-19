@@ -1,0 +1,21 @@
+app: # 本地服务配置
+  host: 127.0.0.1 # 仅绑定本机，公网访问通过独立隧道
+  port: 8765 # 演示服务端口
+  database: runtime/hotel.sqlite3 # 运行数据不提交仓库
+  session_hours: 8 # 登录有效期
+  login_limit: 20 # 每个账号十五分钟内失败次数上限
+  snapshot_hours: 12 # 快照超过该时长需人工核实
+  max_body_bytes: 65536 # 限制请求体大小
+model: # 本地模型配置
+  base_url: http://127.0.0.1:11434 # 只在配置保存模型地址
+  name: qwen3:8b # 已安装的本地模型
+  timeout: 90 # 为首次加载模型保留时间，超时后明确标注规则降级
+  max_tokens: 600 # 限制生成长度
+  concurrency: 1 # 保护本机模型资源
+harness: # 固定执行控制
+  tools: [read_case, search_knowledge, read_graph] # 模型仅使用受控只读信息
+  top_k: 4 # 最多检索四条知识
+  prompt_version: hotel-v1 # 提示词版本用于审计
+plans: # SaaS演示分层，不包含支付
+  basic: 20 # 基础租户每日模型请求配额
+  teaching: 200 # 教学租户每日模型请求配额
