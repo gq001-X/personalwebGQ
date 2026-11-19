@@ -5,3 +5,5 @@ runtime/
 .env
 test-results/
 *.log
+
+/docs/教师访问与演示账号.md
